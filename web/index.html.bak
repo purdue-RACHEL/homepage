@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Name: Boilerplate
+Version: v1.3
+Last Updated: 4/24/2013
+Author: George Hadley
+License: Released for free under a Creative Commons Attribution 2.5 License
+
+This website was based upon a number of source materials, which are elaborated upon in credits.txt
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<!--Reconfigurable base tag; used to modify the site root location for root-relative links-->
+<!-- Python SimpleHTTPServer Testing -->
+<!--<base href="/http://localhost:8000/" />-->
+<!-- ECE477 preview URL -->
+<!--<base href="/https://engineering.purdue.edu/ece477/preview/" />-->
+<!-- ECE477 final URL -->
+<!--<base href="/https://engineering.purdue.edu/ece477/" />-->
+<base href="https://engineering.purdue.edu/477grp12/" />
+
+<!--Content-->
+<title>ECE477 Homepage</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="author" content="George Hadley">
+<meta name = "format-detection" content = "telephone=no" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<!--CSS-->
+<link rel="stylesheet" href="css/default.css" type="text/css" media="all" />
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/content.css">
+<!--[if IE 6]>
+<link href="/default_ie6.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+</head>
+<body>
+<div id="wrapper_site">
+    <div id="wrapper_page">
+		<!-- Instantiate global site header.-->
+		<div id="header"></div>
+		<!-- Instantiate site global navigation bar.-->
+		<div id="menu"></div>
+		<!-- Instantiate slideshow module. All slideshow images should be 1100px x 500px and stored in ./img/slideshow-->
+		<div id="slideshow"></div>
+		<!-- Instantiate main page content. All page content should be added to about.html -->
+		<div id="content">
+            <h2 style="text-align: center; color: darkgreen;">Project Name: R.A.C.H.E.L.</h2>
+            <h2>Project Description:</h2> Project R.A.C.H.E.L. is an enhancement to the original game of table tennis. 
+			Users will no longer need to keep track of their own score; using a contact microphone array, R.A.C.H.E.L. 
+			determines when the ball has bounced, which side of the table it bounced on, and thus, can detect erroneous
+			bounces. In real-time, the score will be displayed on the table, using an overhead projector system. The
+			users can interact with the system through a button matrix, to start and end games, change the scoring mode, 
+			and make other preferential modifications to customize the R.A.C.H.E.L. experience. <br> <br>
+			As a stretch goal, we intend to extend R.A.C.H.E.L. to incorporate a selection of minigames and display modes. 
+			Using a camera above the table, we intend to track the ball in real-time. This would allow for games that 
+			require the user to hit the ball onto specified parts of the table, highlighted by the projector. Or the 
+			user could display the ball’s motion trail to view their play patterns. Similarly, we intend to interface 
+			the camera to track hand gestures, which could also be used for user input to the game. Finally, we hope to 
+			determine, within a few inches, where the ball has bounced on the table, exclusively using the piezoelectric 
+			sensors.<br> <br>
+        
+                <ol>
+                    <li>PSSC #1 (Hardware): An ability to handle 2-way communication between a microcontroller and a laptop through UART.</li>
+                    <li>PSSC #2 (Hardware): An ability to read key presses from a 4x4 keypad matrix.</li>
+                    <li>PSSC #3 (Hardware): An ability to amplify analog signals from contact microphones.</li>
+                    <li>PSSC #4 (Software): An ability to interpret microphone inputs to infer the score.</li>
+					<li>PSSC #5 (Software): An ability to read multiple inputs through 1 ADC controller with a circular buffer.</li>
+                </ol>
+
+				<ol>
+					<h4>
+						Stretch Goals:
+					</h4>
+					<li>An extra minigame that changes the table as the game is played, based on ball bounces.</li>
+					<ul>The table would be divided into a 5x10 grid of cells, that each have two possible states: fair and foul. At the beginning of each rally all cells will be set to fair, and if a ball bounces in a cell during the rally it will become foul. If, at anytime during the rally, the ball bounces in a foul cell, it will increment the score as if the ball missed the table. The cells will be displayed using the projector, and updated within a second of the ball bounce.</ul>
+					<li>Ball Tracking</li>
+						<ul>The ability to accurately track the ball within a 6’’x6’’ square, with a delay of under a second, using a camera.</ul>
+					<li>Gestures</li>
+					<ul>Offer an alternative to the button matrix, by allowing the user to hover a paddle over areas of the table and interact with a projected user interface.</ul>
+					<li>Triangulation</li>
+					<ul>The ability to accurately track the ball within a 6’’x6’’ square, with a delay of under a second, using a microphone array.</ul>
+				</ol>
+
+
+        </div>
+		<!-- Instantiate global footer. Any changes to the footer should be made through the top-level file "footer.html" -->
+		<div id="footer"></div>
+	</div>
+</div>
+
+<!--JS-->
+<script src="js/jquery.js"></script>
+<script src="js/jquery-migrate-1.1.1.js"></script>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#header").load("header.html");
+	$("#menu").load("navbar.html");
+	$("#slideshow").load("slideshow.html");
+	//$("#content").load("about.html");
+	$("#footer").load("footer.html");
+});
+</script>
+
+</body>
+</html>
